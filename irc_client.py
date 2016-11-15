@@ -316,16 +316,16 @@ def user_input(stdscr):
 					bindex += 1
 					clear_prompt(stdscr, buff[bindex])
 					txt = list(buff[bindex])
-					Y, X = stdscr.getyx()
-					eol = X
+					y, x = stdscr.getyx()
+					eol = x
 				
 			elif c == curses.KEY_DOWN:
 				if bindex > 0:
 					bindex -= 1
 					clear_prompt(stdscr, buff[bindex])
 					txt = list(buff[bindex])
-					Y, X = stdscr.getyx()
-					eol = X
+					y, x = stdscr.getyx()
+					eol = x
 				
 			elif c == curses.KEY_END:
 				stdscr.move(y, eol)
