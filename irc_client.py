@@ -8,7 +8,7 @@ from string import printable
 
 # Defining constants and globals
 PRINTABLE = [ord(x) for x in printable]
-BUFF_SIZE = 10 # Command buffer size
+BUFF_SIZE = 100 # Command buffer size
 sockets = []
 servers = {}
 lines = []
@@ -66,8 +66,8 @@ def help(stdscr):
 	output(stdscr, "\t/NAMES [#<channel name>]")
 	output(stdscr, "\t\tList all visible channels & users if no arguments are given")
 	output(stdscr, "\t\tIf channel name is given, list all visible names in that channel")
-	output(stdscr, "\t/QUIT | Closes the connection & exits the program")
-	output(stdscr, "\t/EXIT | Same as /QUIT")
+	output(stdscr, "\t/QUIT [:<message>] | Closes the connection & exits the program")
+	output(stdscr, "\t/EXIT [:<message>] | Same as /QUIT")
 	output(stdscr, "\t/HELP | Display this help dialog")
 	output(stdscr, "------------------------------------------------------------")
 	output(stdscr, "While in a channel:")
@@ -123,7 +123,7 @@ def commands(stdscr, message, connected, inchannel, send):
 	param = ""
 	text = ""
 	msg = message[1:]
-	params = len(msg.split(" ")) - 1
+	params = len(msg.split(" ")) - 1 # Set number of parameters
 
 	if len(msg.split(":")) > 1:
 		text = " :" + msg.split(":")[1]
@@ -252,8 +252,7 @@ def commands(stdscr, message, connected, inchannel, send):
 		help(stdscr)
 
 	elif command == "QUIT" or command == "EXIT":
-		msg = "QUIT"
-		output(stdscr, "You tried to quit, but HAHA, you can't!")
+		msg = "QUIT" + text
 		if connected:
 			send = True
 
@@ -456,7 +455,6 @@ Features to add:
 	- Color! (colorama module?)
 	- Menus & such (maybe)
 	- List users in the channel on the right
-	- Command buffer
 Known bugs:
 	- Sometimes the prompt ">" disappears
 		- It happens when the buffer scrolls without the user pressing Enter
