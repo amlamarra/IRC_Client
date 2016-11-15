@@ -133,7 +133,7 @@ def commands(stdscr, message, connected, inchannel, send):
 
 	command = msg.split(" ")[0].upper()
 
-	if command == "SERVER" and params:
+	if command == "SERVER":
 		if param == "list":
 			for server in servers:
 				output(stdscr, "Server Name: {}  |  Address: {}"
@@ -167,6 +167,10 @@ def commands(stdscr, message, connected, inchannel, send):
 				output(stdscr, "Server name does not exist.")
 		elif param == "delete" and params < 2:
 			output(stdscr, "Specify the server name to delete it.")
+		else:
+			output(stdscr, "Command usage: /SERVER (add|delete|list) [<name> <ip> <port>]")
+			output(stdscr, "\t\tName, IP, and port are required if the add option is used")
+			output(stdscr, "\t\tName is required if the delete option is used")
 
 	elif command == "SET":
 		# I'd really like to clean this place up...
