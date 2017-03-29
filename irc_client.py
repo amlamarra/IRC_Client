@@ -115,7 +115,7 @@ def connect(stdscr, srv_name):
     sockets[0].sendall("NICK {}\r\n".format(servers[srv_name].nick).encode())
     sockets[0].sendall("USER {} 0 * :{}\r\n".format(servers[srv_name].username,
                        servers[srv_name].realname).encode())
-    t = threading.Thread(target=listen,args=(stdscr,))
+    t = threading.Thread(target=listen, args=(stdscr,))
     t.daemon = True
     t.start()
 
