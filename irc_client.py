@@ -439,13 +439,7 @@ Notes on IRC:
         PART #foo :message
         QUIT :message
     Server queries and commands: (to be implemented later)
-        MOTD
-        LUSERS
-        VERSION
-        STATS
-        LINKS
-        TIME
-        TRACE
+        MOTD, LUSERS, VERSION, STATS, LINKS, TIME, TRACE
         INFO (returns server version, when it was compiled, patchlevel,
               when it started, and any other misc info)
     User queries: (to be implemented later)
