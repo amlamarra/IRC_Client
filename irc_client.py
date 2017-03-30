@@ -384,7 +384,7 @@ def user_input(stdscr):
 
         if (message.split(" ")[0].upper() == "/QUIT" or
             message.split(" ")[0].upper() == "/EXIT"):
-                break
+            break
 
         send = False  # Reset the send flag
 
