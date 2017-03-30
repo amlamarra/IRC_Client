@@ -458,4 +458,6 @@ Features to add:
 Known bugs:
     - Sometimes the prompt ">" disappears
         - It happens when the buffer scrolls without the user pressing Enter
+    - The client crashes if a connection is refused
+    - Backspace key doesn't work when running this on Windows
 '''
