@@ -417,7 +417,6 @@ Notes on IRC:
         USER <username> <mode> :<realname>
         Examples:
             NICK elusive
-            USER amlamarra 0 * :Andrew L
             USER eb 0 * :Elusive Bear
             USER elusive 8 * :Elusive Bear  # Join as invisible
     Each line from the client cannot be more than 512 characters in length
