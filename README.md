@@ -1,6 +1,7 @@
 # IRC Client
 This is an IRC client I'm writing in Python.
 
+```
 ------------------------------------------------------------
 List of commands (not case sensitive):
         /SERVER (add|delete|list) [<name> <ip> <port>]
@@ -27,3 +28,4 @@ While in a channel:
         /PART [<part message>] | Leaves the current channel
         /PRIVMSG <nick> :<message> | Send a private message to a user
 ------------------------------------------------------------
+```
