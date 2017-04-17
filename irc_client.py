@@ -290,6 +290,8 @@ def commands(stdscr, message, connected, inchannel, send):
 
 def clear_prompt(stdscr, string=""):
     Ymax, Xmax = stdscr.getmaxyx()
+    stdscr.move(Ymax-2, 0)
+    stdscr.addstr("================================================================================")
     stdscr.move(Ymax-1, 0)
     stdscr.clrtoeol()
     # Put the nick before the prompt if connected to a server
@@ -340,7 +342,6 @@ def user_input(stdscr):
                     txt = list(buff[bindex])
                     y, x = stdscr.getyx()
                     eol = x
-
             elif c == curses.KEY_DOWN:
                 if bindex > 0:
                     bindex -= 1
@@ -348,7 +349,6 @@ def user_input(stdscr):
                     txt = list(buff[bindex])
                     y, x = stdscr.getyx()
                     eol = x
-
             elif c == curses.KEY_END:
                 stdscr.move(y, eol)
             elif c == curses.KEY_HOME:
