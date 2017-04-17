@@ -1,5 +1,5 @@
 # IRC Client
-This is an IRC client I'm writing in Python.
+This is an IRC client implemented in Python3.
 
 ```
 ------------------------------------------------------------
