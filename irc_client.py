@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 import socket
 import threading
 import curses
@@ -138,13 +138,28 @@ def commands(stdscr, message, connected, inchannel, send):
     command = msg.split(" ")[0].upper()
 
     if command == "SERVER":
-        if param == "list":
+        if param == "list" and params >= 2:
+            name = msg.split(" ")[2]
+            if name in servers:
+                output(stdscr, "  Server Name: {}  |  Address: {}"
+                       .format(name, servers[name].addr))
+                output(stdscr, "         Nick: {}".format(servers[name].nick))
+                output(stdscr, "     Username: {}".format(servers[name].username))
+                output(stdscr, "     Realname: {}\n".format(servers[name].realname))
+                output(stdscr, "")
+            else:
+                output(stdscr, "That server name does not exist")
+                for server in servers:
+                    output(stdscr, "  Server Name: {}  |  Address: {}"
+                        .format(server, servers[server].addr))
+                output(stdscr, "")
+        elif param == "list" and params < 2:
             for server in servers:
-                output(stdscr, "Server Name: {}  |  Address: {}"
+                output(stdscr, "  Server Name: {}  |  Address: {}"
                        .format(server, servers[server].addr))
-                output(stdscr, "       Nick: {}".format(servers[server].nick))
-                output(stdscr, "   Username: {}".format(servers[server].username))
-                output(stdscr, "   Realname: {}".format(servers[server].realname))
+                output(stdscr, "         Nick: {}".format(servers[server].nick))
+                output(stdscr, "     Username: {}".format(servers[server].username))
+                output(stdscr, "     Realname: {}".format(servers[server].realname))
                 output(stdscr, "")
         elif param == "add" and params >= 4:
             name = msg.split(" ")[2]
