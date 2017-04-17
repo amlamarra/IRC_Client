@@ -305,7 +305,7 @@ def user_input(stdscr):
                 bindex = 0
                 buff[0] = ""
                 break
-            elif c == curses.KEY_BACKSPACE:
+            elif c in (8, curses.KEY_BACKSPACE):
                 if x > X:
                     eol -= 1
                     del txt[x-X-1]
@@ -459,5 +459,4 @@ Known bugs:
     - Sometimes the prompt ">" disappears
         - It happens when the buffer scrolls without the user pressing Enter
     - The client crashes if a connection is refused
-    - Backspace key doesn't work when running this on Windows
 '''
