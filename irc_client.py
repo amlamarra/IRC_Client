@@ -151,7 +151,7 @@ def commands(stdscr, message, connected, inchannel, send):
                 output(stdscr, "That server name does not exist")
                 for server in servers:
                     output(stdscr, "  Server Name: {}  |  Address: {}"
-                        .format(server, servers[server].addr))
+                           .format(server, servers[server].addr))
                 output(stdscr, "")
         elif param == "list" and params < 2:
             for server in servers:
@@ -291,7 +291,7 @@ def commands(stdscr, message, connected, inchannel, send):
 def clear_prompt(stdscr, string=""):
     Ymax, Xmax = stdscr.getmaxyx()
     stdscr.move(Ymax-2, 0)
-    stdscr.addstr("================================================================================")
+    stdscr.addstr("===============================================================================")
     stdscr.move(Ymax-1, 0)
     stdscr.clrtoeol()
     # Put the nick before the prompt if connected to a server
