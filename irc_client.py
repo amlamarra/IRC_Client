@@ -431,9 +431,9 @@ Notes on IRC:
         NICK <nickname>
         USER <username> <mode> :<realname>
         Examples:
-            NICK elusive
-            USER eb 0 * :Elusive Bear
-            USER elusive 8 * :Elusive Bear  # Join as invisible
+            NICK andrew
+            USER alamarra 0 * :Andrew Lamarra
+            USER alamarra 8 * :Andrew Lamarra  # Join as invisible
     Each line from the client cannot be more than 512 characters in length
         Including CR-LF
     Channel Names:
